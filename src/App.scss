@@ -1,0 +1,95 @@
+*{
+    padding: 0;
+    margin : 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    background: black;
+}
+$accent-color: hsl(236, 78%, 49%);
+
+.App{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+
+.search{  
+    margin-top: 10px;  
+    form{
+        .input-field{
+            position: relative;
+            background: white;
+            border-radius: 10px;
+            
+            max-width: 500px;
+            margin: 0 auto;
+            input{
+                width: 70%;
+                padding: 10px;
+                font-size: 1.3rem;
+                font-weight: medium;
+                background: none;
+                border: none;
+                outline:none;
+                color: gray;
+            }
+            button{
+                display: block;
+                width:fit-content;
+                padding:  5px 20px;
+                background: $accent-color;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                svg{
+                    width: 20px;
+                    stroke: white;
+                    fill:none;
+                }
+            }
+        }
+    }
+}
+
+nav{
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.452);
+    display: flex;
+    a{
+        color:white;
+        font-weight: bold;
+        padding: 10px 20px;
+        display: block;
+        width: fit-content;
+        
+    }
+    .active{
+        border-bottom: 2px solid white;
+    }
+}
+
+.trending{
+    padding: 20px 0;
+    h3{
+        color: white;
+        margin-bottom: 10px;
+    }
+    a{
+        display: block;
+        height: fit-content;
+        margin: 5px;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+
+
