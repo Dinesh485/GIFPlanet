@@ -3,29 +3,73 @@
     margin : 0;
     text-decoration: none;
     box-sizing: border-box;
+    list-style-type: none;
 }
 body{
-    background: black;
+    background: rgb(0, 0, 0);
 }
-$accent-color: hsl(236, 78%, 49%);
+
+html{
+    scroll-behavior: smooth;
+}
+$accent-color: #1b28de;
 
 .App{
     width: 90%;
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 1400px;
 }
 
+.scroll-top-button{
+    position: fixed;
+    right: 30px;
+    bottom: 20px;
+    display: block;
+    box-sizing: content-box;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: white;
+    background: $accent-color;
+    @media (min-width: 996px) {
+        padding: 15px;
+        bottom: 100px;
+        right: 100px;
+    }
+}
 
 .search{  
     margin-top: 10px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo{
+        display: flex;
+        align-items: center;
+        
+        margin-bottom: 10px;
+       img{
+        width: 70px;
+       }
+       h3{
+           color: #f80cf8;
+           font-size: 2rem;
+       }
+    }
     form{
+        position: relative;
+        width: 100%;
+        max-width: 500px;
         .input-field{
             position: relative;
             background: white;
             border-radius: 10px;
             
-            max-width: 500px;
-            margin: 0 auto;
+            
+           
             input{
                 width: 70%;
                 padding: 10px;
@@ -55,6 +99,41 @@ $accent-color: hsl(236, 78%, 49%);
                 }
             }
         }
+       .searchTags{
+           position: absolute;
+           left: 0;
+           width: 100%;
+           background: white;
+           border-radius: 10px;
+           padding: 10px 0px;
+           margin-top: 5px;
+           li{
+              
+                 padding: 5px 10px;
+                 display: block;
+                 color:  rgb(48, 48, 48);
+                 font-size: 1rem;
+               
+           }
+       }
+    }
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        >*{
+            margin: 10px 20px;
+        }
+    }
+    @media (min-width: 1200px){
+        .logo{
+            img{
+                width: 120px;
+            }
+            h3{
+                font-size: 3rem;
+            }
+        }
     }
 }
 
@@ -73,6 +152,17 @@ nav{
     .active{
         border-bottom: 2px solid white;
     }
+    @media(min-width: 996px){
+        a{
+            font-size: 1.3rem;
+        }
+    }
+    @media(min-width: 1200px){
+        a{
+            font-size: 1.5rem;
+        }
+        margin-bottom: 20px;
+    }
 }
 
 .trending{
@@ -85,11 +175,17 @@ nav{
         display: block;
         height: fit-content;
         margin: 5px;
+        .loadingGif{
+            width: 50%;
+            margin: 0 auto;
+        }
         img{
             width: 100%;
         }
+        
     }
 }
+
 
 
 

@@ -7,7 +7,7 @@ const LazyImage = ({url}) => {
     return ( 
        <div>
            
-        <img src={loadingGif} alt=""  style = {{display: isLoading?'block': 'none'}}/>
+        <img src={loadingGif} alt=""  style = {{display: isLoading?'block': 'none'}} className = "loadingGif"/>
         <img src={url} alt="" onLoad = {() => setIsLoading(false)} style = {{display: isLoading?'none': 'block'}}/>
        </div>
      );

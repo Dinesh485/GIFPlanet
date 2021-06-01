@@ -16,7 +16,7 @@ const FetchTrending = ({type}) => {
   const limit = 10;
   let offset = 0;
   let searchOffset = 0;
-  console.log(searchOffset)
+ 
   
   const fetchTrending = () => {
     setIsFetching(true)
@@ -41,7 +41,7 @@ const FetchTrending = ({type}) => {
       `https://api.giphy.com/v1/${type}/search?api_key=${API_KEY}&limit=${limit}&offset=${0}&q=${string}`
     )
     .then((res) => {
-      
+      setSearchResult([])
       let newSearchResult = [ ...res.data.data];
       setSearchResult(newSearchResult);
       setIsFetching(false) 
@@ -76,16 +76,15 @@ const FetchTrending = ({type}) => {
     );
   })
    
-  const searchList = searchResult.map((item, index) => {
+  const searchList = searchResult.length !== 0 ? searchResult.map((item, index) => {
     searchOffset = index +1
-   
     return (
       <a href={item.url} key={index}>
         <LazyImage url={item.images.fixed_width.webp} />
       </a>
     
     );
-  })
+  }) : <p style = {{color: 'white', textAlign : 'center' , display : 'absolute'}}>no result found</p>
 
   
 
